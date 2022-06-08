@@ -1,4 +1,4 @@
-// Just testing commit and push using CLion :)
+// checking git :)
 Welcome to the world of MtmChkin!!!
 Please enter team size: (2-6)
 Please insert the player name and class: 
