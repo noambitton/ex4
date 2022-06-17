@@ -14,4 +14,7 @@ private:
 };
 
 
+
+
+
 #endif //CARD_H_GOBLIN_H

@@ -7,3 +7,6 @@ virtual void Goblin::applyLoss(Player& player) const override
     player.damage(healthPointsDamageUponLoss);
     printLossBattle(player.getName(), m_monsterName);
 }
+
+
+
