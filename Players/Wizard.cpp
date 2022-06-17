@@ -17,7 +17,8 @@ Player *Wizard::clone() const
 
 std::ostream &Wizard::printPlayerInfo(ostream &os) const
 {
-    printPlayerDetails(os, m_name, m_job, m_level, m_force, m_healthPoints, m_coins);
+    printPlayerDetails(os, getName(), JOB, getLevel(), getForce(), getHealthPoints(),
+                       getCoins());
     return os;
 }
 

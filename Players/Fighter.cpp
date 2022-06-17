@@ -6,7 +6,7 @@ using std::ostream;
 Fighter::Fighter(const string &name) : Player(name) { }
 
 int Fighter::getAttackStrength() const {
-    return (2*m_force + m_level);
+    return (2*getForce() + getLevel());
 }
 
 Player *Fighter::clone() const {
@@ -15,6 +15,7 @@ Player *Fighter::clone() const {
 
 std::ostream &Fighter::printPlayerInfo(ostream &os) const
 {
-    printPlayerDetails(os, m_name, m_job, m_level, m_force, m_healthPoints, m_coins);
+    printPlayerDetails(os, getName(), JOB, getLevel(), getForce(), getHealthPoints(),
+                       getCoins());
     return os;
 }

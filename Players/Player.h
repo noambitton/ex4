@@ -59,14 +59,6 @@ public:
     void levelUp();
 
     /*
-     * getLevel returns the level of the player.
-     *
-     * @return
-     *      the level of the player.
-     */
-    int getLevel() const;
-
-    /*
      * buff increases the number of force points by  forcePointsAddition.
      *
      * @param forcePointsAddition - the number of new points the player earned.
@@ -133,22 +125,56 @@ public:
      */
     virtual int getAttackStrength() const;
 
+    /*
+     * getLevel returns the level of the player.
+     *
+     * @return
+     *      the level of the player.
+     */
+    int getLevel() const;
+
+    /**
+     *
+     * @return the name of the player
+     */
     string getName() const;
+
+    /**
+     *
+     * @return the force of the player
+     */
+    int getForce() const;
+
+    /**
+     *
+     * @return the health points of the player
+     */
+    int getHealthPoints() const;
+
+    /**
+     *
+     * @return the coins of the player
+     */
+    int getCoins() const;
 
     friend std::ostream& operator<<(std::ostream& os, const Player& player);
 
+    static const int MAX_NAME_SIZE = 15; //TODO: MOVE TO PRIVATE?
 
-    static const int MAX_NAME_SIZE = 15;
+    /**
+     * Decreases the force in 1
+     */
+    void LossForcePoint();
 protected:
+    virtual std::ostream &printPlayerInfo(std::ostream &os) const=0;
+
+private:
     string m_name;
     int m_level;
     int m_force;
     int m_healthPoints;
     int m_coins;
 
-    virtual std::ostream &printPlayerInfo(std::ostream &os) const=0;
-
-private:
     static const int INITIAL_LEVEL = 1;
     static const int MAX_LEVEL = 10;
     static const int INITIAL_COINS = 10;

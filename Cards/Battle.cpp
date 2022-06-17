@@ -1,10 +1,10 @@
 #include "Battle.h"
 
-BAttle::Battle(CardType name, /**string monsterName, **/int force, int loot, int healthPointsDamageUponLoss) : Card(name),
+Battle::Battle(CardType name, /**string monsterName, **/int force, int loot, int healthPointsDamageUponLoss) : Card(name),
                                                         /**m_monsterName(monaterName), **/m_force(force), m_loot(loot),
                                                         m_healthPointsDamageUponLoss(healthPointsdamageUponLoss) {};
 
-virtual void Battle::applyEncounter(Player& player) const override
+void Battle::applyEncounter(Player& player) const
 {
     if (player.getAttackStrength() >= m_force){
         player.levelUp();
@@ -16,7 +16,7 @@ virtual void Battle::applyEncounter(Player& player) const override
     }
 }
 
-void Battle::createCardDescription(std::ostream& ostream, const Card& card) override
+void Battle::createCardDescription(std::ostream& ostream, const Card& card)
 {
     bool isDragon = (m_name == "Dragon");
     printCardDetails(ostream, m_name);

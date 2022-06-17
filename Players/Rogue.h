@@ -61,7 +61,7 @@ public:
     void addCoins(int coinsAddition) override;
 
 private:
-    string m_job = "Rogue";
+    const string JOB = "Rogue";
 
     std::ostream &printPlayerInfo(std::ostream &os) const override;
 };

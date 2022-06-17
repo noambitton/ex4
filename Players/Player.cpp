@@ -91,15 +91,21 @@ int Player::getAttackStrength() const
     return (m_force + m_level);
 }
 
-
 string Player::getName() const {
     return m_name;
 }
 
 bool isValidName(const string &name) {
-    return (name.size() <= Player::MAX_NAME_SIZE) && (std::all_of(name.begin(), name.end(),
-                                                                  [](char const &c) {
-                                                                      return std::isalpha(c);}));
+    bool isEnglishLetter = true;
+
+    for(char i=0; i<name.size() && isEnglishLetter; i++)
+    {
+        if(name[i] > 'z' || name[i] < 'a' || name[i] > 'Z' || name[i] < 'A'){
+            isEnglishLetter = false;
+        }
+    }
+
+    return (name.size() <= Player::MAX_NAME_SIZE) && (isEnglishLetter);
 }
 
 
@@ -109,4 +115,20 @@ std::ostream &operator<<(ostream &os, const Player &player) {
 
 bool Player::isWon() const {
     return m_level == MAX_LEVEL;
+}
+
+int Player::getForce() const {
+    return m_force;
+}
+
+int Player::getHealthPoints() const {
+    return m_healthPoints;
+}
+
+int Player::getCoins() const {
+    return m_coins;
+}
+
+void Player::LossForcePoint() {
+    m_force--;
 }

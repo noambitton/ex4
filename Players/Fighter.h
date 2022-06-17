@@ -59,7 +59,7 @@ public:
     int getAttackStrength() const override;
 
 private:
-    string m_job = "Fighter";
+    const string JOB = "Fighter";
     std::ostream &printPlayerInfo(std::ostream &os) const override;
 };
 

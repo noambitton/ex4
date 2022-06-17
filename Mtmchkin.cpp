@@ -5,6 +5,7 @@
 #include "Exception.h"
 #include "Card.h"
 #include "utilities.h"
+
 #include <queue>
 #include <fstream>
 #include <memory>
@@ -30,6 +31,8 @@ using std::map;
 using std::deque;
 using std::stringstream;
 using std::istringstream;
+
+
 
 /**
  * A template for creating new Instance of Card depending on the card type

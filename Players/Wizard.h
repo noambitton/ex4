@@ -64,7 +64,7 @@ public:
     void heal(int healthPointsAddition) override;
 
 private:
-    string m_job = "Wizard";
+    const string JOB= "Wizard";
 
     /**
      * function that prints the wizrd information
